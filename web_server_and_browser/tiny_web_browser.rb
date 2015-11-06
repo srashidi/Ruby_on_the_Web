@@ -17,8 +17,8 @@ when "POST"
   name = gets.chomp.strip
   printf "What is your email? "
   email = gets.chomp.strip
-  results = {viking: {name: name, email: email}}.to_json
-  request = "POST #{results} HTTP/1.0\nContent-Length: results.size\r\n\r\n"
+  results = {viking: {name: name, email: email} }
+  request = "POST #{results.to_json} HTTP/1.0\nContent-Length: results.size\r\n\r\n"
 else
   puts "Invalid input!"
 end
